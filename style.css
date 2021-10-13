@@ -175,6 +175,8 @@ circle {
     display: flex;
     justify-content: space-between;
     padding: 0 200px;
+    text-align: left;
+    margin-top: 100px;
 }
 
 .card svg {
@@ -187,10 +189,29 @@ circle {
 
 .card div {
     background-color: white;
-    text-align: left;
     width: 290px;
     position: relative;
     top: 20px;
+}
+
+.employee div {
+    top: 0 !important;
+    height: 290px;
+}
+
+.employee-container h2 {
+    margin-bottom: 0;
+}
+
+.employee-container p {
+    margin-top: -1px;
+}
+
+.linked {
+    position: relative;
+    top: -285px;
+    left: 240px;
+    width: 40px !important;
 }
 
 .card div p {
@@ -202,7 +223,7 @@ circle {
 }
 
 .move {
-    transform: translate(-30px, -30px);
+    transform: translate(-20px, -20px);
 }
 
 .row {
