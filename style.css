@@ -276,6 +276,8 @@ circle {
     color: white;
     margin: 0;
     padding: 50px;
+    position: relative;
+    height: 50vh;
 }
 
 .quote p {
@@ -283,12 +285,19 @@ circle {
     line-height: 45px;
     font-weight: 100;
     width: 60vw;
-    position: relative;
+    position: absolute;
     left: 20vw;
+    display: inline;
     padding: 100px 0;
 }
 
-.quote-container svg {
+.svg-left {
     position: absolute;
     left: -50px;
+}
+
+.svg-right {
+    position: absolute;
+    right: -50px;
+    top: 250px;
 }
