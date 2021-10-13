@@ -34,7 +34,7 @@ people.forEach(p => {
 });
 
 const slider = document.querySelector('.items');
-const grid = document.querySelector("main");
+const grid = document.querySelector(".grid-container");
 //CIRCLE CURSOR W FOLLOWING DOT
 const $bigBall = document.querySelector('.cursor__ball--big');
 const $hoverables = document.querySelectorAll('.hoverable');
@@ -42,37 +42,34 @@ const $hoverables = document.querySelectorAll('.hoverable');
 let isDown = false;
 let startX;
 let scrollLeft;
-var hover = false;
 var body = document.querySelector("body");
 
-if(hover == false) {
-    slider.addEventListener('mouseover', (e) => {
-        $bigBall.classList.toggle("show");
-        hover = true;
-        body.style.cursor = "none";
-    });
-}
+grid.addEventListener('mouseover', (e) => {
+    $bigBall.classList.add("show");
+    console.log($bigBall.classList);
+    body.style.cursor = "none";
+});
 
-$bigBall.addEventListener('mousedown', (e) => {
+grid.addEventListener('mousedown', (e) => {
   isDown = true;
   slider.classList.add('active');
   startX = e.pageX - slider.offsetLeft;
-  $bigBall.classList.toggle("show");
+  $bigBall.classList.remove("show");
   scrollLeft = slider.scrollLeft;
 });
 
-slider.addEventListener('mouseleave', () => {
+grid.addEventListener('mouseleave', () => {
   isDown = false;
   slider.classList.remove('active');
-  hover = false;
+  $bigBall.classList.remove("show");
 });
 
-$bigBall.addEventListener('mouseup', () => {
+grid.addEventListener('mouseup', () => {
   isDown = false;
   slider.classList.remove('active');
 });
 
-slider.addEventListener('mousemove', (e) => {
+grid.addEventListener('mousemove', (e) => {
     if(!isDown) return;
     e.preventDefault();
     const x = e.pageX - slider.offsetLeft;
