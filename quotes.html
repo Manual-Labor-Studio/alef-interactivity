@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
-    <title>Pulse Animation</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Quotes Animation</title>
 </head>
 <body>
     <div class="circle">
@@ -28,6 +29,18 @@
             </div>
         </div>
     </div>
+    <div class="quote-container">
+        <div class="mark">
+            <svg width="350" height="180">
+                <polygon points="130, 0, 200, 0, 70, 180, 0, 180" fill="#703bf4"/>
+                <polygon points="250, 0, 320, 0, 190, 180, 120, 180" fill="#703bf4"/>
+            </svg>
+        </div>
+        <div class="quote" data-aos="fade-down">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum erat cursus eleifend placerat. Duis eu ligula a augue ultrices sollicitudin. Vivamus turpis justo, viverra vel mollis ac, sagittis in risus.</p>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="scripts1.js"></script>
 </body>
 </html>

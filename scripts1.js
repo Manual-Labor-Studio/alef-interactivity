@@ -126,3 +126,5 @@ const runAnimations = () => {
 
 runAnimations();
 
+AOS.init();
+
