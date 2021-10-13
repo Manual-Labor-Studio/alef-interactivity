@@ -1,15 +1,26 @@
 var cards = document.querySelectorAll(".card div");
+var linkedin = document.querySelectorAll(".linked");
 
 cards.forEach(el => {
     el.addEventListener('mouseover', function(){
-       el.classList.toggle("move");
-       el.style.transition = "0.5s";
+      el.classList.toggle("move");
+      el.style.transition = "0.5s";
+      if(linkedin.length != 0) {
+        var idx_show = [].indexOf.call(cards, el);
+        linkedin[idx_show].classList.toggle("hide");
+        linkedin[idx_show].classList.toggle("show");
+      }
     });
 });
 
 cards.forEach(el => {
     el.addEventListener('mouseout', function(){
        el.classList.toggle("move");
+       if(linkedin.length != 0) {
+        var idx_hide = [].indexOf.call(cards, el);
+        linkedin[idx_hide].classList.toggle("show");
+        linkedin[idx_hide].classList.toggle("hide");
+       }
     });
 });
 
