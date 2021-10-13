@@ -141,7 +141,14 @@ circle {
 	}
 }
 
+.stat-body {
+    height: 100vh;
+    background-color: black;
+}
+
 .stats-container {
+    position: relative;
+    top: 30vh;
     background-color: black;
     text-align: center;
     color: white;
