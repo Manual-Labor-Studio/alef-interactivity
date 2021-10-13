@@ -1802,7 +1802,7 @@ function init() {
         }
     });
 
-    var material3 = new THREE.ParticleCanvasMaterial({
+    /*var material3 = new THREE.ParticleCanvasMaterial({
 
         color: 0x7bfaf4,
         program: function (context) {
@@ -1811,7 +1811,7 @@ function init() {
             context.arc(0, 0, 10, 0, PI2, true);
             context.fill();
         }
-    });
+    });*/
 
 
     var i = 0;
@@ -1827,12 +1827,13 @@ function init() {
         }
         for (var iy = partY; iy < AMOUNTY; iy++) {
             //EXAMPLE OF LARGER PARTICLE
-            if(ix == 25 && iy == 25) {
+            /*if(ix == 25 && iy == 25) {
                 particle = particles[i++] = new THREE.Particle(material3);
             }
             else {
                 particle = particles[i++] = new THREE.Particle(material1);
-            }
+            }*/
+            particle = particles[i++] = new THREE.Particle(material1);
             particle.position.x = ix * SEPARATION - ((AMOUNTX * SEPARATION) / 2);
             particle.position.z = iy * SEPARATION - ((AMOUNTY * SEPARATION) / 2);
             scene.add(particle);

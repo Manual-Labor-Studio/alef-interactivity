@@ -12,3 +12,23 @@ cards.forEach(el => {
        el.classList.toggle("move");
     });
 });
+
+var people = document.querySelectorAll(".person");
+var circles = document.querySelectorAll(".person svg");
+
+people.forEach(p => {
+    p.addEventListener('mouseover', function(){
+        var idx_show = [].indexOf.call(people, p);
+        console.log(circles[idx_show]);
+        circles[idx_show].classList.toggle("hide");
+        circles[idx_show].classList.toggle("show");
+    });
+});
+
+people.forEach(p => {
+    p.addEventListener('mouseout', function(){
+        var idx_hide = [].indexOf.call(people, p);
+        circles[idx_hide].classList.toggle("show");
+        circles[idx_hide].classList.toggle("hide");
+    });
+});
