@@ -1764,8 +1764,11 @@ init();
 animate();
 
 function init() {
-    container = document.querySelector(".homeembed")
+    var home = document.querySelector(".homeembed");
+    container = document.createElement('div');
     container.style.transform = "rotate(-30deg) scale(2)";
+
+    home.appendChild(container);
 
     camera = new THREE.PerspectiveCamera(120, window.innerWidth / window.innerHeight, 400, 10000);
     camera.position.z = 1000; // original 500
