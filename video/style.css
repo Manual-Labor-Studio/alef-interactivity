@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+}
+
+.play {
+    width: 200px;
+}
+
+.play:hover {
+    cursor: pointer;
+}
+
+.circle_hide {
+    opacity: 0;
+    transition: 1.5s;
+}
+
+.circle_video {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: 1.5s;
+}
+
+.full_video {
+    width: 100vw;
+    height: 100vh;
+    transition: 1.5s;
+    position: absolute;
+    z-index: 1000;
+    object-fit: cover;
+    top: 0;
+}
+
+.close {
+    font-family: sans-serif;
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    z-index: 2000;
+}
+
+.close:hover {
+    cursor: pointer;
+}
