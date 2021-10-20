@@ -27,13 +27,13 @@ const animateCountUp = el => {
             if (el.id == "stat-1") {
                 end = " X";
             }
-            /* ADD IF STATEMENTS HERE TO CHANGE UNIT OF STAT
-            else if(el.id == "stat-2") {
-              end = " %";
+            /* ADD IF STATEMENTS HERE TO CHANGE UNIT OF STAT*/
+            else if (el.id == "stat-2") {
+                end = " %";
             }
-            else if(el.id == "stat-3") {
-              end = " B";
-            }*/
+            else if (el.id == "stat-3") {
+                end = " B";
+            }
             el.innerHTML = currentCount + end;
         }
 
