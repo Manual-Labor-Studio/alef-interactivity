@@ -25,14 +25,14 @@ const animateCountUp = el => {
         // If the current count has changed, update the element
         if (parseInt(el.innerHTML, 10) !== currentCount) {
             if (el.id == "stat-1") {
-                end = " X";
+                end = "X";
             }
             /* ADD IF STATEMENTS HERE TO CHANGE UNIT OF STAT*/
             else if (el.id == "stat-2") {
-                end = " %";
+                end = "%";
             }
             else if (el.id == "stat-3") {
-                end = " B";
+                end = "B";
             }
             el.innerHTML = currentCount + end;
         }
