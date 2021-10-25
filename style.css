@@ -298,3 +298,8 @@ circle {
     right: -50px;
     top: 250px;
 }
+
+.blank {
+    height: 100vh;
+    color: blue;
+}

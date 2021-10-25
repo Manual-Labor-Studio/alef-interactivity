@@ -48,6 +48,7 @@ close.addEventListener('click', function() {
 
 function close_video(){
     close.classList.toggle('toggle_close');
+    video.controls = false;
     video.classList.remove('full_video');
     video.classList.add('circle_video');
     video.classList.add('circle_hide');

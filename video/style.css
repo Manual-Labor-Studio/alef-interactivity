@@ -45,3 +45,8 @@ body {
 .close:hover {
     cursor: pointer;
 }
+
+.blank {
+    height: 100vh;
+    color: blue;
+}

@@ -124,7 +124,27 @@ const runAnimations = () => {
   countupEls.forEach( animateCountUp );
 };
 
-runAnimations();
+var stat;
+var windowHeight;
+
+function init() {
+  stat = document.querySelector('.stats-container');
+  windowHeight = window.innerHeight;
+}
+
+function checkPosition() {
+  var positionFromTop = stat.getBoundingClientRect().top;
+
+  if (positionFromTop - windowHeight <= 0) {
+    runAnimations();
+    window.removeEventListener('scroll', checkPosition);
+  }
+}
+
+init();
+
+window.addEventListener('scroll', checkPosition);
+window.addEventListener('resize', init);  
 
 AOS.init({
   once: true
