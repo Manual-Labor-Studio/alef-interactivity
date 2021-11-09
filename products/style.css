@@ -1,0 +1,40 @@
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.not-hover {
+    opacity: 0.5;
+} 
+
+.rotate {
+    transform: rotate(180deg);
+    transition: 3s;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.text {
+    width: 30vw; 
+}
+
+.text div {
+    padding-bottom: 16px;
+}
+
+.module {
+    height: 50vh;
+    width: 30vw;
+    position: relative;
+}
+
+img {
+    position: absolute;
+    height: 100%;
+}

@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.not-hover {
+    opacity: 0.5;
+} 
+
+.text {
+    width: 30vw; 
+}
+
+.text div {
+    padding-bottom: 16px;
+}
+
+.module {
+    height: 50vh;
+    width: 30vw;
+}
