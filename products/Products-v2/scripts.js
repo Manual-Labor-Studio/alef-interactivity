@@ -13,6 +13,8 @@ var particle_speed = 2.5;
 var particle_angle = 0;
 var ran_img;
 var logo_img;
+var scale1 = 1.4;
+var scale2 = 1.2;
 
 function preload() {
     ran_img = loadImage('assets/RAN.png');
@@ -50,14 +52,12 @@ function draw() {
         stroke(79, 79, 79);
     }
 
-    var scale = 1.4;
-
     //IMAGES 
     if(state == 1 && angle == 90) {
-        image(ran_img, centerX, centerY, scale*radius, scale*ran_img.height*radius/ran_img.width);
+        image(ran_img, centerX, centerY, scale1*radius, scale1*ran_img.height*radius/ran_img.width);
     }
     if(state == 2 && angle == 270) {
-        image(logo_img, centerX, centerY, scale*radius, scale*logo_img.height*radius/logo_img.width);
+        image(logo_img, centerX, centerY, scale2*radius, scale2*logo_img.height*radius/logo_img.width);
     }
 
     strokeWeight(10);
