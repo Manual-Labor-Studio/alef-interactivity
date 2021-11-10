@@ -17,14 +17,13 @@ else {
 
 var angle = 0;
 var speed = 5;
-var particle_speed = 2.5;
+var particle_speed = 1.25;
 var particle_angle = 0;
 var ran_img;
 var logo_img;
 var circle_img;
 var blue_circle_img;
 var scale1 = 1.4;
-var scale2 = 1.2;
 
 function preload() {
     ran_img = loadImage('assets/RAN.png');
@@ -47,10 +46,10 @@ function windowResized() {
     centerX = mod_width/2;
     centerY = mod_height/2;
     if(centerY > centerX) {
-        radius = (mod_width/2)-40;
+        radius = (mod_width/2)-60;
     }
     else {
-        radius = (mod_height/2)-40;
+        radius = (mod_height/2)-60;
     }
     myCanvas = resizeCanvas(mod_width, mod_height);
   }
@@ -62,12 +61,12 @@ function draw() {
     }
 
     if(state == 3) {
-        stroke(116, 250, 252);
+        //stroke(116, 250, 252);
         image(blue_circle_img, centerX, centerY, radius*2+20, radius*2+20);
     }
 
     else  {
-        stroke(124, 124, 124);
+        //stroke(124, 124, 124);
         image(circle_img, centerX, centerY, radius*2+20, radius*2+20);
     }
 
@@ -76,13 +75,13 @@ function draw() {
         image(ran_img, centerX, centerY, scale1*radius, scale1*ran_img.height*radius/ran_img.width);
     }
     if(state == 2 && angle == 270) {
-        image(logo_img, centerX, centerY, scale2*radius, scale2*logo_img.height*radius/logo_img.width);
+        image(logo_img, centerX, centerY, radius, logo_img.height*radius/logo_img.width);
     }
 
-    strokeWeight(15);
+    /*strokeWeight(15);
     noFill();
     setLineDash([15, 13]); //longer stitches
-   // ellipse(centerX, centerY, radius*2, radius*2);
+    ellipse(centerX, centerY, radius*2, radius*2);*/
 
 
 
@@ -185,9 +184,9 @@ function draw() {
     angle = angle + speed;
 }
 
-function setLineDash(list) {
+/*function setLineDash(list) {
     drawingContext.setLineDash(list);
-}
+}*/
 
 products.forEach(function(p, idx) {
     p.addEventListener('mouseover', function(){
