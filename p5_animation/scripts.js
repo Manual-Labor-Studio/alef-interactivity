@@ -1,10 +1,17 @@
+var node1 = document.getElementById("node-1");
+var node2 = document.getElementById("node-2");
+var node3 = document.getElementById("node-3");
+
 var connect = function(sketch) {
     var speed = 1.3;
     var x = 19;
     var canvas1;
     sketch.setup = function() {
         canvas1 = sketch.createCanvas(106,97);
-        canvas1.mouseOver(growLine);
+        canvas1.parent(node1);
+        setTimeout(function(){
+            setInterval(growLine,4000);
+        },1000);
         sketch.fill(0);
     
     }
@@ -37,7 +44,10 @@ var build = function(sketch) {
     var canvas2;
     sketch.setup = function() {
         canvas2 = sketch.createCanvas(106,137);
-        canvas2.mouseOver(dropConnection);
+        canvas2.parent(node2);
+        setTimeout(function(){
+            setInterval(dropConnection,4000);
+        },1500);
         sketch.fill(0);
     }
     sketch.draw = function() {
@@ -75,7 +85,10 @@ var dream = function(sketch) {
     var canvas3;
     sketch.setup = function() {
         canvas3 = sketch.createCanvas(106,97);
-        canvas3.mouseOver(glow);
+        canvas3.parent(node3);
+        setTimeout(function(){
+            setInterval(glow,4000);
+        },2000);
     }
     sketch.draw = function() {
         sketch.clear();
