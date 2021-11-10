@@ -23,3 +23,18 @@ body {
     height: 50vh;
     width: 30vw;
 }
+
+.text-svg {
+    position: absolute;
+}
+
+.text-svg svg {
+    position: relative;
+    top: -15px;
+    left: -15px;
+    z-index: -50;
+}
+
+.hide {
+    opacity: 0;
+}

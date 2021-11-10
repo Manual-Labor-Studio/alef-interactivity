@@ -1,5 +1,6 @@
-var products = document.querySelectorAll(".text div");
+var products = document.querySelectorAll(".product");
 var module = document.querySelector(".module");
+var circles = document.querySelectorAll(".text-svg svg");
 var state = 1;
 var previous = 0;
 var mod_width = module.offsetWidth;
@@ -184,9 +185,11 @@ function hoverText(p) {
     for(let i=0; i<products.length; i++) {
         if(products[i] == p) {
             p.classList.remove("not-hover");
+            circles[i].classList.remove("hide");
         }
         else {
             products[i].classList.add("not-hover");
+            circles[i].classList.add("hide");
         }
     }
 }
