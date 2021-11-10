@@ -7,19 +7,30 @@ var mod_width = module.offsetWidth;
 var mod_height = module.offsetHeight;
 var centerX = mod_width/2;
 var centerY = mod_height/2;
-var radius = centerY-60;
+var radius;
+if(centerY > centerX) {
+    radius = (mod_width/2)-60;
+}
+else {
+    radius = (mod_height/2)-60;
+}
+
 var angle = 0;
-var speed = 2.5;
+var speed = 5;
 var particle_speed = 2.5;
 var particle_angle = 0;
 var ran_img;
 var logo_img;
+var circle_img;
+var blue_circle_img;
 var scale1 = 1.4;
 var scale2 = 1.2;
 
 function preload() {
     ran_img = loadImage('assets/RAN.png');
     logo_img = loadImage('assets/Logo.png');
+    circle_img = loadImage('assets/CircleGray.png');
+    blue_circle_img = loadImage('assets/CircleBlue.png');
 }
 
 function setup() {
@@ -35,22 +46,29 @@ function windowResized() {
     mod_height = module.offsetHeight;
     centerX = mod_width/2;
     centerY = mod_height/2;
-    radius = centerY-40;
+    if(centerY > centerX) {
+        radius = (mod_width/2)-40;
+    }
+    else {
+        radius = (mod_height/2)-40;
+    }
     myCanvas = resizeCanvas(mod_width, mod_height);
   }
   
 function draw() {
-    background(220);
+    background(255);
     if(angle == 360) {
         angle = 0;
     }
 
     if(state == 3) {
         stroke(116, 250, 252);
+        image(blue_circle_img, centerX, centerY, radius*2+20, radius*2+20);
     }
 
     else  {
-        stroke(79, 79, 79);
+        stroke(124, 124, 124);
+        image(circle_img, centerX, centerY, radius*2+20, radius*2+20);
     }
 
     //IMAGES 
@@ -61,10 +79,12 @@ function draw() {
         image(logo_img, centerX, centerY, scale2*radius, scale2*logo_img.height*radius/logo_img.width);
     }
 
-    strokeWeight(10);
+    strokeWeight(15);
     noFill();
-    setLineDash([20, 20]); //longer stitches
-    ellipse(centerX, centerY, radius*2, radius*2);
+    setLineDash([15, 13]); //longer stitches
+   // ellipse(centerX, centerY, radius*2, radius*2);
+
+
 
     noStroke();
     // translate to point to rotate around
@@ -172,7 +192,7 @@ function setLineDash(list) {
 products.forEach(function(p, idx) {
     p.addEventListener('mouseover', function(){
         state = idx+1;
-        speed = 2.5;
+        speed = 5;
         if(previous != idx) {
             p.style.cursor = "pointer";
             hoverText(p);

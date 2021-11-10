@@ -1,5 +1,6 @@
-var products = document.querySelectorAll(".text div");
+var products = document.querySelectorAll(".product");
 var module = document.querySelector(".module");
+var circles = document.querySelectorAll(".text-svg svg");
 var state = 1;
 var previous = 0;
 var mod_width = module.offsetWidth;
@@ -11,11 +12,21 @@ var angle = 0;
 var speed = 2.5;
 var particle_speed = 2.5;
 var particle_angle = 0;
+var ran_img;
+var logo_img;
+var scale1 = 1.4;
+var scale2 = 1.2;
+
+function preload() {
+    ran_img = loadImage('assets/RAN.png');
+    logo_img = loadImage('assets/Logo.png');
+}
 
 function setup() {
     var myCanvas = createCanvas(mod_width, mod_height);
     myCanvas.parent(module);
     rectMode(CENTER);
+    imageMode(CENTER);
     angleMode(DEGREES);
 }
 
@@ -37,9 +48,19 @@ function draw() {
     if(state == 3) {
         stroke(116, 250, 252);
     }
+
     else  {
         stroke(79, 79, 79);
     }
+
+    //IMAGES 
+    if(state == 1 && angle == 90) {
+        image(ran_img, centerX, centerY, scale1*radius, scale1*ran_img.height*radius/ran_img.width);
+    }
+    if(state == 2 && angle == 270) {
+        image(logo_img, centerX, centerY, scale2*radius, scale2*logo_img.height*radius/logo_img.width);
+    }
+
     strokeWeight(10);
     noFill();
     setLineDash([20, 20]); //longer stitches
@@ -48,6 +69,7 @@ function draw() {
     noStroke();
     // translate to point to rotate around
     translate(centerX, centerY);
+
     rotate(angle);
     if(state == 1 && angle == 90) {
         speed = 0;
@@ -60,19 +82,6 @@ function draw() {
         fill(116, 250, 252, 85)
         ellipse(radius, 0, 100, 100);
     }
-
-    if(state == 3 && angle == 0) {
-        speed = 0;
-    }
-
-    // draw shape as though (centerX, centerY) is the new
-    // origin / (0, 0) point
-    fill(0);
-    ellipse(radius, 0, 80, 80);
-
-    fill(112, 59, 244);
-    ellipse(-radius, 0, 80, 80);
-    angle = angle + speed;
 
     if(state == 3 && angle == 0) {
         if(particle_angle == 360) {
@@ -140,8 +149,20 @@ function draw() {
         var y3 = radius * Math.cos(Math.PI * 2 * a3 / 360);
         ellipse(-x3, y3, 30, 30);
 
+        speed = 0;
+        rotate(-particle_angle);
+
         particle_angle = particle_angle + particle_speed;
     }
+
+    // draw shape as though (centerX, centerY) is the new
+    // origin / (0, 0) point
+    fill(0);
+    ellipse(radius, 0, 80, 80);
+
+    fill(112, 59, 244);
+    ellipse(-radius, 0, 80, 80);
+    angle = angle + speed;
 }
 
 function setLineDash(list) {
@@ -164,9 +185,11 @@ function hoverText(p) {
     for(let i=0; i<products.length; i++) {
         if(products[i] == p) {
             p.classList.remove("not-hover");
+            circles[i].classList.remove("hide");
         }
         else {
             products[i].classList.add("not-hover");
+            circles[i].classList.add("hide");
         }
     }
 }
