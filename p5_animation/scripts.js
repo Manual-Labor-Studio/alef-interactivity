@@ -4,14 +4,12 @@ var node3 = document.getElementById("node-3");
 
 var connect = function(sketch) {
     var speed = 1.3;
-    var x = 19;
+    var x = 80;
     var canvas1;
     sketch.setup = function() {
         canvas1 = sketch.createCanvas(106,97);
         canvas1.parent(node1);
-        setTimeout(function(){
-            setInterval(growLine,4000);
-        },1000);
+        setInterval(growLine,6000);
         sketch.fill(0);
     
     }
@@ -39,15 +37,15 @@ new p5(connect);
   
 
 var build = function(sketch) {
-    var speed = 1.3;
+    var speed = 2;
     var y = 58;
     var canvas2;
     sketch.setup = function() {
         canvas2 = sketch.createCanvas(106,137);
         canvas2.parent(node2);
         setTimeout(function(){
-            setInterval(dropConnection,4000);
-        },1500);
+            setInterval(dropConnection,6000);
+        },1000);
         sketch.fill(0);
     }
     sketch.draw = function() {
@@ -65,10 +63,19 @@ var build = function(sketch) {
     }
     function dropConnection(){
         y = 18;
-        var drop = setInterval(function(){
-            y = y + speed;
-            if(y >= 58) {
-                clearInterval(drop);
+        var down = true;
+        var drop = setInterval(function(){ // 58
+            if(y >= 70) {
+                down = false;
+            }
+            if(down) {
+                y = y + speed;
+            }
+            else {
+                y = y - speed;
+                if(y< 58) {
+                    clearInterval(drop);
+                }
             }
         },10);
     }
@@ -79,43 +86,58 @@ new p5(build);
 
 
 var dream = function(sketch) {
-    var speed = 1;
+    var speed = 0.5;
     var d = 36;
     var grow;
     var canvas3;
     sketch.setup = function() {
-        canvas3 = sketch.createCanvas(106,97);
+        canvas3 = sketch.createCanvas(121,115);
         canvas3.parent(node3);
         setTimeout(function(){
-            setInterval(glow,4000);
+            setInterval(glow,6000);
         },2000);
     }
     sketch.draw = function() {
         sketch.clear();
         //lines
         sketch.strokeWeight(3);
-        sketch.line(18,18,82,18);
-        sketch.line(18,79,82,79);
+        sketch.line(18,26,82,26);
+        sketch.line(18,90,82,90);
         //circles
         sketch.fill(0);
         sketch.strokeWeight(0);
-        sketch.ellipse(18,79,36);
-        sketch.ellipse(88,18,36);
+        sketch.ellipse(26,90,36);
+        sketch.ellipse(96,26,36);
         sketch.fill(116,250,252);
-        sketch.ellipse(88,79,d);
+        sketch.ellipse(96,90,36);
         sketch.fill(112,59,244);
-        sketch.ellipse(18,18,d);
+        sketch.ellipse(26,26,36);
         //glowing
-        /*sketch.fill(112,59,244,30);
-        sketch.ellipse(18,18,d);
+        sketch.fill(112,59,244,30);
+        sketch.ellipse(26,26,d);
         sketch.fill(116,250,252,50);
-        sketch.ellipse(88,79,d);*/
+        sketch.ellipse(96,90,d);
     }
     function glow(){
-        d = 0;
+        clearInterval(grow);
+        d = 35;
+        var large = true;
+        var count = 0;
         grow = setInterval(function(){
-            d = d + speed;
-            if(d>=36) {
+            if(d>50) {
+                large = false;
+            }
+            else if(d < 35) {
+                count++;
+                large = true;
+            }
+            if(large) {
+                d = d + speed;
+            }
+            else {
+                d = d - speed;
+            }
+            if(count>2) {
                 clearInterval(grow);
             }
         },10);
