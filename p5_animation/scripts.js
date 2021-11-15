@@ -38,7 +38,7 @@ new p5(connect);
 
 var build = function(sketch) {
     var speed = 2;
-    var y = 58;
+    var y = 55;
     var canvas2;
     sketch.setup = function() {
         canvas2 = sketch.createCanvas(106,137);
@@ -63,19 +63,12 @@ var build = function(sketch) {
     }
     function dropConnection(){
         y = 18;
-        var down = true;
-        var drop = setInterval(function(){ // 58
-            if(y >= 70) {
-                down = false;
-            }
-            if(down) {
-                y = y + speed;
+        var drop = setInterval(function(){
+            if(y > 55) {
+                clearInterval(drop);
             }
             else {
-                y = y - speed;
-                if(y< 58) {
-                    clearInterval(drop);
-                }
+                y = y + speed;
             }
         },10);
     }
