@@ -62,12 +62,12 @@ function draw() {
 
     if(state == 3) {
         //stroke(116, 250, 252);
-        image(blue_circle_img, centerX, centerY, radius*2+20, radius*2+20);
+        image(blue_circle_img, centerX, centerY, radius*2.1, radius*2.1);
     }
 
     else  {
         //stroke(124, 124, 124);
-        image(circle_img, centerX, centerY, radius*2+20, radius*2+20);
+        image(circle_img, centerX, centerY, radius*2.1, radius*2.1);
     }
 
     //IMAGES 
@@ -93,13 +93,13 @@ function draw() {
     if(state == 1 && angle == 90) {
         speed = 0;
         fill(116, 250, 252, 85);
-        ellipse(-radius, 0, 100, 100);
+        ellipse(-radius, 0, radius/1.6, radius/1.6);
     }
 
     if(state == 2 && angle == 270) {
         speed = 0;
         fill(116, 250, 252, 85)
-        ellipse(radius, 0, 100, 100);
+        ellipse(radius, 0, radius/1.6, radius/1.6);
     }
 
     if(state == 3 && angle == 0) {
@@ -116,7 +116,7 @@ function draw() {
         else {
             fill(0);
         }
-        ellipse(radius, 0, 30, 30);
+        ellipse(radius, 0, radius/5, radius/5);
         if(particle_angle >= 120 && particle_angle < 300) {
             fill(112, 59, 244);
         }
@@ -126,7 +126,7 @@ function draw() {
         var a1  = 30;
         var x1 = radius * Math.sin(Math.PI * 2 * a1 / 360);
         var y1 = radius * Math.cos(Math.PI * 2 * a1 / 360);
-        ellipse(x1, y1, 30, 30);
+        ellipse(x1, y1, radius/5, radius/5);
         if(particle_angle >= 150 && particle_angle < 330) {
             fill(112, 59, 244);
         }
@@ -136,7 +136,7 @@ function draw() {
         var a2  = 60;
         var x2 = radius * Math.sin(Math.PI * 2 * a2 / 360);
         var y2 = radius * Math.cos(Math.PI * 2 * a2 / 360);
-        ellipse(x2, y2, 30, 30);
+        ellipse(x2, y2, radius/5, radius/5);
 
 
 
@@ -146,7 +146,7 @@ function draw() {
         else {
             fill(112, 59, 244);
         }
-        ellipse(-radius, 0, 30, 30);
+        ellipse(-radius, 0, radius/5, radius/5);
         if(particle_angle >= 120 && particle_angle < 300) {
             fill(0);
         }
@@ -156,7 +156,7 @@ function draw() {
         var a4  = 150;
         var x4 = radius * Math.sin(Math.PI * 2 * a4 / 360);
         var y4 = radius * Math.cos(Math.PI * 2 * a4 / 360);
-        ellipse(-x4, y4, 30, 30);
+        ellipse(-x4, y4, radius/5, radius/5);
         if(particle_angle >= 150 && particle_angle < 330) {
             fill(0);
         }
@@ -166,7 +166,7 @@ function draw() {
         var a3  = 120;
         var x3 = radius * Math.sin(Math.PI * 2 * a3 / 360);
         var y3 = radius * Math.cos(Math.PI * 2 * a3 / 360);
-        ellipse(-x3, y3, 30, 30);
+        ellipse(-x3, y3, radius/5, radius/5);
 
         speed = 0;
         rotate(-particle_angle);
@@ -177,10 +177,10 @@ function draw() {
     // draw shape as though (centerX, centerY) is the new
     // origin / (0, 0) point
     fill(0);
-    ellipse(radius, 0, 80, 80);
+    ellipse(radius, 0, radius/2, radius/2);
 
     fill(112, 59, 244);
-    ellipse(-radius, 0, 80, 80);
+    ellipse(-radius, 0, radius/2, radius/2);
     angle = angle + speed;
 }
 
