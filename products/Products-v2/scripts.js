@@ -28,7 +28,7 @@ var scale1 = 1.4;
 function preload() {
     ran_img = loadImage('assets/RAN.png');
     logo_img = loadImage('assets/Logo.png');
-    circle_img = loadImage('assets/CircleGray.png');
+    circle_img = loadImage('assets/Circle.png');
     blue_circle_img = loadImage('assets/CircleBlue.png');
 }
 
@@ -55,7 +55,7 @@ function windowResized() {
   }
   
 function draw() {
-    background(255);
+    clear();
     if(angle == 360) {
         angle = 0;
     }

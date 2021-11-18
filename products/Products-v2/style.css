@@ -4,7 +4,8 @@ body {
 
 .container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
 }
 
 .not-hover {
@@ -21,7 +22,7 @@ body {
 
 .module {
     height: 60vh;
-    width: 30vw;
+    width: 40vw;
 }
 
 .text-svg {
