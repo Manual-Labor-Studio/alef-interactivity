@@ -24,7 +24,7 @@ p {
 } 
 
 .text {
-    width: 30vw; 
+    width: 50vw; 
 }
 
 .text div {
@@ -33,7 +33,7 @@ p {
 
 .module {
     height: 60vh;
-    width: 40vw;
+    width: 50vw;
 }
 
 .text-svg {
