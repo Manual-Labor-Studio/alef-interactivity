@@ -71,4 +71,8 @@ p {
      .text {
         width: 90%; 
     }
+
+    .text div {
+        padding-bottom: 8px;
+    }
 }
