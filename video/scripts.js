@@ -1,6 +1,6 @@
 const play = document.querySelector('.play');
 const circle_div = document.querySelector('.circle');
-const video = document.querySelector('video');
+const video = document.querySelector('iframe');
 const close = document.querySelector('.close');
 
 var full_screen = false;
@@ -28,9 +28,6 @@ play.addEventListener('click', function(){
         video.classList.remove('circle_video');
         video.classList.add('full_video');
         close.classList.toggle('toggle_close');
-        setTimeout(function(){
-            video.play();
-        }, 2000);
     }
 });
 
