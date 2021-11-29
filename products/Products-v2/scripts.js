@@ -28,7 +28,7 @@ var scale1 = 1.4;
 function preload() {
     ran_img = loadImage('assets/RAN.png');
     logo_img = loadImage('assets/Logo.png');
-    circle_img = loadImage('assets/Circle.png');
+    circle_img = loadImage('assets/Circle1.png');
     blue_circle_img = loadImage('assets/CircleBlue.png');
 }
 
