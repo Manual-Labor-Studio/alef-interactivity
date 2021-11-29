@@ -44,7 +44,6 @@ p {
 
 .text-svg svg {
     position: relative;
-    top: -15px;
     left: -15px;
     z-index: -50;
 }
