@@ -24,6 +24,7 @@ var logo_img;
 var circle_img;
 var blue_circle_img;
 var scale1 = 1.4;
+var scale2 = 0.80;
 
 function preload() {
     ran_img = loadImage('assets/RAN.png');
@@ -75,7 +76,7 @@ function draw() {
         image(ran_img, centerX, centerY, scale1*radius, scale1*ran_img.height*radius/ran_img.width);
     }
     if(state == 2 && angle == 270) {
-        image(logo_img, centerX, centerY, radius, logo_img.height*radius/logo_img.width);
+        image(logo_img, centerX, centerY, scale2*radius, scale2*logo_img.height*radius/logo_img.width);
     }
 
     /*strokeWeight(15);
