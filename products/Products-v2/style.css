@@ -78,4 +78,10 @@ p {
     .text div {
         padding-bottom: 8px;
     }
+    .text-svg svg {
+        position: relative;
+        top:-5px;
+        left: -8;
+        z-index: -50;
+    }
 }
