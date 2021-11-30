@@ -81,7 +81,7 @@ p {
     .text-svg svg {
         position: relative;
         top:-5px;
-        left: -8;
+        left: -8px;
         z-index: -50;
     }
 }
